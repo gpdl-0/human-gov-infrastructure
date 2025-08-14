@@ -1,3 +1,4 @@
+/*
 resource "aws_security_group" "state_ec2_sg" {
   name        = "humangov-${var.state_name}-ec2-sg"
   description = "Allow traffic on ports 22 and 80"
@@ -71,6 +72,8 @@ resource "aws_instance" "state_ec2" {
   }
 }
 
+*/
+
 resource "aws_dynamodb_table" "state_dynamodb" {
   name           = "humangov-${var.state_name}-dynamodb"
   billing_mode   = "PAY_PER_REQUEST"
@@ -99,6 +102,8 @@ resource "aws_s3_bucket" "state_s3" {
     Name = "humangov-${var.state_name}"
   }
 }
+
+/*
 
 # Create an IAM Role for EC2 to access S3 and DynamoDB
 resource "aws_iam_role" "s3_dynamodb_full_access_role" {
@@ -146,3 +151,5 @@ resource "aws_iam_instance_profile" "s3_dynamodb_full_access_instance_profile" {
     Name = "humangov-${var.state_name}"
   }  
 }
+
+*/
